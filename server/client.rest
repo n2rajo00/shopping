@@ -1,0 +1,11 @@
+### testaa tehtävien haku GET-metodilla
+
+GET http://localhost:3001 HTTP/1.1
+
+### toinen
+POST http://localhost:3001/new HTTP/1.1
+Content-Type: application/json
+
+{
+    "description":"Test from Client Rest"
+}
