@@ -35,15 +35,6 @@ function save() {
     })
 }
 
-function remove(id) {
-  axios.delete(`${URL}delete/${id}`)
-    .then(() => {
-      const newListWithoutRemoved = items.filter((item) => item.id !== id)
-      setItems(newListWithoutRemoved)
-    }).catch(error => {
-      alert(error.response.data.error)
-    })
-}
 
 return (
   <div>
@@ -56,11 +47,6 @@ return (
     <ol>
       {items.map(items => (
         <li key={items.id}>{items.description} </li>
-      ))}
-    </ol>
-    <ol>
-      {items.map(item => (
-        <li key={item.id}>{item.description} <a href='#' onClick={() => remove(item.id)}>Delete</a></li>
       ))}
     </ol>
   </div>
